@@ -26,7 +26,7 @@ O sistema é composto por cinco entidades principais, cujas relações e atribut
 | Onibus | id, placa, modelo, ano, capacidade, id_linha, id_motorista |
 | Empresa | id, nome |
 
-As entidades `Parada` e `Horario` são armazenadas como listas encadeadas dentro de `Linha`, ordenadas automaticamente por distância e por horário, respectivamente. As demais entidades são armazenadas em arrays globais de tamanho fixo.
+As entidades `Parada` e `Horario` são armazenadas como listas encadeadas dentro de `Linha`, ordenadas automaticamente por distância e por horário, respectivamente. As demais entidades (`Linha`, `Motorista`, `Onibus` e `Empresa`) são armazenadas em arrays dinâmicos alocados com `malloc` e realocados com `realloc` conforme necessário.
 
 ---
 
@@ -133,6 +133,8 @@ Os requisitos não-funcionais descrevem como o sistema deve se comportar, indepe
 | RNF04 | O sistema deve inserir horários em ordem cronológica automaticamente, sem intervenção do usuário. |
 | RNF05 | O sistema deve ser operado via interface de menu no terminal. |
 | RNF06 | O sistema deve liberar toda memória alocada dinamicamente ao encerrar. |
+| RNF07 | O sistema deve alocar os arrays de entidades dinamicamente, iniciando com capacidade inicial pequena e realocando com `realloc` quando necessário. |
+| RNF08 | O sistema deve liberar os arrays dinâmicos ao encerrar, além de toda memória das listas encadeadas. |
 
 ---
 
@@ -184,7 +186,7 @@ Os headers declaram as assinaturas das funções de cada entidade. Os arquivos `
 
 #### Database (`database/`)
 
-Centraliza o estado global do sistema. O arquivo `database.h` declara as variáveis com `extern` e `database.c` as define, reservando memória uma única vez. Isso garante que todos os controllers acessem os mesmos dados sem duplicação.
+Centraliza o estado global do sistema. O arquivo `database.h` declara ponteiros para os arrays dinâmicos e os contadores de registros com `extern`. O `database.c` inicializa esses ponteiros com `malloc` numa função `db_init()` e os libera numa função `db_free()`. Isso garante que todos os controllers acessem os mesmos dados sem duplicação.
 
 #### `main.c`
 
