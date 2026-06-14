@@ -20,10 +20,11 @@ O sistema é composto por cinco entidades principais, cujas relações e atribut
 | Entidade | Atributos |
 | --- | --- |
 | Motorista | id, nome, idade, sexo, empresa |
-| Linha | id, numero, nome, empresa, *paradas (lista enc.),*horarios (lista enc.) |
+| Linha | id, nome, empresa, *paradas (lista enc.),*horarios (lista enc.) |
 | Parada | id, nome, distancia_km, *proxima |
 | Horario | id, hora, minuto, *proximo |
 | Onibus | id, placa, modelo, ano, capacidade, id_linha, id_motorista |
+| Empresa | id, nome |
 
 As entidades `Parada` e `Horario` são armazenadas como listas encadeadas dentro de `Linha`, ordenadas automaticamente por distância e por horário, respectivamente. As demais entidades são armazenadas em arrays globais de tamanho fixo.
 
@@ -91,6 +92,16 @@ Os requisitos funcionais descrevem as operações que o sistema deve executar. E
 | RF27 | O sistema deve permitir calcular a tarifa para o percurso completo de uma linha. |
 | RF28 | O sistema deve calcular a tarifa com base na diferença de distância em km entre a parada de embarque e a de desembarque. |
 | RF29 | O sistema deve exibir o valor da tarifa calculada ao usuário. |
+
+### 3.7 Gestão de Empresas
+
+| Código | Descrição |
+| --- | --- |
+| RF30 | O sistema deve permitir cadastrar uma empresa informando nome. |
+| RF31 | O sistema deve permitir editar os dados de uma empresa. |
+| RF32 | O sistema deve permitir remover uma empresa. |
+| RF33 | O sistema deve listar todas as empresas cadastradas. |
+| RF34 | O sistema deve permitir buscar uma empresa por nome. |
 
 ---
 
