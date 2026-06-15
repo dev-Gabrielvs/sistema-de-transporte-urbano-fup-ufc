@@ -29,7 +29,7 @@ void show_motoristas_by_company(void){
     nome[strcspn(nome, "\n")] = 0;
 
     MotoristasPorEmpresa motoristas_empresa = BuscarMotoristasPorEmpresa(nome);
-    if (motoristas_empresa.motoristas_empresa) {
+    if (motoristas_empresa.num_motoristas_empresa > 0) {
         for (unsigned int i = 0; i < motoristas_empresa.num_motoristas_empresa; i++) {
             fprintf(stdout, "ID: %u, Nome: %s, Idade: %hu, Sexo: %c, ID Empresa: %u\n", motoristas_empresa.motoristas_empresa[i].id, motoristas_empresa.motoristas_empresa[i].nome, motoristas_empresa.motoristas_empresa[i].idade, motoristas_empresa.motoristas_empresa[i].sexo, motoristas_empresa.motoristas_empresa[i].id_empresa);
         }
