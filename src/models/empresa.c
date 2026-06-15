@@ -72,6 +72,5 @@ Empresa BuscarEmpresaPorNome(const char *nome)
         }
     }
 
-    Empresa invalida = {0, ""};
-    return invalida;
+    return (Empresa){0, ""};
 }
