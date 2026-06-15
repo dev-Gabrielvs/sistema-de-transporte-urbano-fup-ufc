@@ -8,19 +8,18 @@ INCLUDES = -I. -I./includes -I./includes/models -I./includes/controllers \
 
 SRC = database/database.c \
       $(wildcard src/models/*.c) \
-      $(wildcard src/controllers/*.c)
+      $(wildcard src/controllers/*.c) \
+      src/main.c
 
 OUT = transporte
 
 OBJS = $(SRC:.c=.o)
 
 all: $(OBJS)
+	$(CC) $(CFLAGS) $(INCLUDES) $(SRC) -o $(OUT) -lm
 
 %.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
-
-link: $(OBJS)
-	$(CC) $(CFLAGS) $(INCLUDES) $(SRC) -o $(OUT)
 
 clean:
 	rm -f $(OUT) $(OBJS)
