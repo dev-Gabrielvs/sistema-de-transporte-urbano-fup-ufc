@@ -19,6 +19,14 @@ extern unsigned int num_motoristas;
 extern size_t capacidade_motoristas;
 extern unsigned int proximo_id_motorista;
 
+#include "linha.h"
+
+extern Linha *linhas;
+extern unsigned int num_linhas;
+extern size_t capacidade_linhas;
+extern unsigned int proximo_id_linha;
+
+
 short db_init(void);
 void db_clear(void);
 

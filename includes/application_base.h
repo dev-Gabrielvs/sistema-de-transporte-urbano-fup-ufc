@@ -6,11 +6,13 @@
 #include <string.h>
 
 #include "database/database.h"
+
 #include "empresa.h"
 #include "motorista.h"
-
+#include "linha.h"
 
 #include "empresas_controller.h"
 #include "motoristas_controller.h"
+#include "linhas_controller.h"
 
 #endif
