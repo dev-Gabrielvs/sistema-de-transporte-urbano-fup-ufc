@@ -7,8 +7,10 @@
 
 #include "database/database.h"
 #include "empresa.h"
+#include "motorista.h"
 
 
 #include "empresas_controller.h"
+#include "motoristas_controller.h"
 
 #endif
