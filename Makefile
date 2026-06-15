@@ -8,8 +8,8 @@ INCLUDES = -I. -I./includes -I./includes/models -I./includes/controllers \
 
 SRC = src/main.c \
       database/database.c \
-      src/models/empresa.c \
-      src/controllers/empresas_controller.c
+      $(wildcard src/models/*.c) \
+      $(wildcard src/controllers/*.c)
 
 OUT = transporte
 
