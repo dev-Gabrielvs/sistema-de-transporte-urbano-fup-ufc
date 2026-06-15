@@ -15,6 +15,11 @@ unsigned int num_linhas;
 size_t capacidade_linhas;
 unsigned int proximo_id_linha;
 
+Onibus *onibus;
+unsigned int num_onibus;
+size_t capacidade_onibus;
+unsigned int proximo_id_onibus;
+
 short db_init(void) {
     capacidade_empresas = 5;
     empresas = malloc(sizeof(Empresa) * capacidade_empresas);
@@ -49,6 +54,17 @@ short db_init(void) {
     num_linhas = 0;
     proximo_id_linha = 1;
 
+    capacidade_onibus = 5;
+    onibus = malloc(sizeof(Onibus) * capacidade_onibus);
+
+    if (onibus == NULL) {
+        fprintf(stderr, "Erro ao alocar memória para ônibus.\n");
+        return 0;
+    }
+
+    num_onibus = 0;
+    proximo_id_onibus = 1;
+
     return 1;
 }
 
@@ -56,4 +72,5 @@ void db_clear(void){
     free(empresas);
     free(motoristas);
     free(linhas);
+    free(onibus);
 }

@@ -26,6 +26,13 @@ extern unsigned int num_linhas;
 extern size_t capacidade_linhas;
 extern unsigned int proximo_id_linha;
 
+#include "onibus.h"
+
+extern Onibus *onibus;
+extern unsigned int num_onibus;
+extern size_t capacidade_onibus;
+extern unsigned int proximo_id_onibus;
+
 
 short db_init(void);
 void db_clear(void);

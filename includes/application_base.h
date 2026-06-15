@@ -10,9 +10,11 @@
 #include "empresa.h"
 #include "motorista.h"
 #include "linha.h"
+#include "onibus.h"
 
 #include "empresas_controller.h"
 #include "motoristas_controller.h"
 #include "linhas_controller.h"
+#include "onibus_controller.h"
 
 #endif
