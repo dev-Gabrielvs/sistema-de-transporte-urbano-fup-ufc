@@ -11,10 +11,14 @@
 #include "motorista.h"
 #include "linha.h"
 #include "onibus.h"
+#include "parada.h"
+#include "horario_linha.h"
 
 #include "empresas_controller.h"
 #include "motoristas_controller.h"
 #include "linhas_controller.h"
 #include "onibus_controller.h"
+#include "paradas_controller.h"
+#include "horario_linhas_controller.h"
 
 #endif

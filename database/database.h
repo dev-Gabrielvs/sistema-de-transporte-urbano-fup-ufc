@@ -33,6 +33,14 @@ extern unsigned int num_onibus;
 extern size_t capacidade_onibus;
 extern unsigned int proximo_id_onibus;
 
+#include "parada.h"
+
+extern unsigned int proximo_id_parada;
+
+#include "horario_linha.h"
+
+extern unsigned int proximo_id_horario;
+
 
 short db_init(void);
 void db_clear(void);

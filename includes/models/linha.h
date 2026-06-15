@@ -18,6 +18,8 @@ typedef struct {
 } LinhasPorEmpresa;
 
 Linha* ListarLinhas(void);
+Linha AdicionarLinha(const char *nome, unsigned int id_empresa);
+Linha EditarLinha(unsigned int id, const char *novo_nome);
 Linha BuscarLinhaPorNome(const char *nome);
 LinhasPorEmpresa BuscarLinhasPorEmpresa(const char *nome_empresa);
 short RemoverLinha(unsigned int id);

@@ -40,6 +40,43 @@ void show_linhas_by_company(void){
     }
 }
 
+void create_linha(void){
+    char nome[50];
+    unsigned int id_empresa;
+    fprintf(stdout, "Digite o nome da nova linha: ");
+    fgets(nome, sizeof(nome), stdin);
+    nome[strcspn(nome, "\n")] = 0;
+
+    fprintf(stdout, "Digite o ID da empresa para associar a linha: ");
+    scanf("%u", &id_empresa);
+    getchar();
+
+    Linha nova_linha = AdicionarLinha(nome, id_empresa);
+    if (nova_linha.id != 0) {
+        printf("Linha '%s' adicionada com ID %u.\n", nova_linha.nome, nova_linha.id);
+    } else {
+        fprintf(stderr, "Erro ao adicionar linha.\n");
+    }
+}
+
+void update_linha(void){
+    char nome[50];
+    unsigned int id;
+    fprintf(stdout, "Digite o ID da linha que deseja editar: ");
+    scanf("%u", &id);
+    getchar();
+
+    fprintf(stdout, "Digite o novo nome da linha: ");
+    fgets(nome, sizeof(nome), stdin);
+    nome[strcspn(nome, "\n")] = 0;
+
+    Linha linha_editada = EditarLinha(id, nome);
+    if (linha_editada.id != 0) {
+        printf("Linha com ID %u editada para '%s'.\n", linha_editada.id, linha_editada.nome);
+    } else {
+        fprintf(stderr, "Erro ao editar linha. Linha com ID %u não encontrada.\n", id);
+    }
+}
 
 void delete_linha(void){
     unsigned int id;
