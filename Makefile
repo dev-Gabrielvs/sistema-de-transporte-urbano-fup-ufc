@@ -6,19 +6,23 @@ CFLAGS = -Wall -Wextra -Wpedantic -Wshadow -Wformat=2 -Wconversion \
 INCLUDES = -I. -I./includes -I./includes/models -I./includes/controllers \
            -I./database
 
-SRC = src/main.c \
-      database/database.c \
+SRC = database/database.c \
       $(wildcard src/models/*.c) \
       $(wildcard src/controllers/*.c)
 
 OUT = transporte
 
-all: $(OUT)
+OBJS = $(SRC:.c=.o)
 
-$(OUT): $(SRC)
+all: $(OBJS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+link: $(OBJS)
 	$(CC) $(CFLAGS) $(INCLUDES) $(SRC) -o $(OUT)
 
 clean:
-	rm -f $(OUT)
+	rm -f $(OUT) $(OBJS)
 
 .PHONY: all clean
