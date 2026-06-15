@@ -20,5 +20,6 @@
 #include "onibus_controller.h"
 #include "paradas_controller.h"
 #include "horario_linhas_controller.h"
+#include "tarifas_controller.h"
 
 #endif
