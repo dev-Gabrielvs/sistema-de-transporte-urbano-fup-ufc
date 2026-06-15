@@ -42,7 +42,7 @@ Os requisitos funcionais descrevem as operações que o sistema deve executar. E
 | RF02 | O sistema deve permitir editar os dados de uma linha. |
 | RF03 | O sistema deve permitir remover uma linha. |
 | RF04 | O sistema deve listar todas as linhas cadastradas. |
-| RF05 | O sistema deve permitir buscar uma linha por id, por número ou por empresa. |
+| RF05 | O sistema deve permitir buscar uma linha por nome ou por empresa. |
 
 ### 3.2 Gestão de Paradas
 
@@ -50,7 +50,7 @@ Os requisitos funcionais descrevem as operações que o sistema deve executar. E
 | --- | --- |
 | RF06 | O sistema deve permitir cadastrar uma parada em uma linha informando nome e distância em km desde a origem. |
 | RF07 | O sistema deve inserir a parada automaticamente em ordem crescente de distância na lista da linha. |
-| RF08 | O sistema deve permitir editar os dados de uma parada. |
+| RF08 | O sistema deve permitir editar o nome de uma parada. |
 | RF09 | O sistema deve permitir remover uma parada de uma linha. |
 | RF10 | O sistema deve listar todas as paradas de uma linha em ordem de distância. |
 
@@ -60,9 +60,8 @@ Os requisitos funcionais descrevem as operações que o sistema deve executar. E
 | --- | --- |
 | RF11 | O sistema deve permitir cadastrar um horário associado a uma linha informando hora e minuto. |
 | RF12 | O sistema deve inserir o horário automaticamente em ordem cronológica na lista da linha. |
-| RF13 | O sistema deve permitir editar um horário. |
-| RF14 | O sistema deve permitir remover um horário de uma linha. |
-| RF15 | O sistema deve listar todos os horários de uma linha em ordem cronológica. |
+| RF13 | O sistema deve permitir remover um horário de uma linha. |
+| RF14 | O sistema deve listar todos os horários de uma linha em ordem cronológica. |
 
 ### 3.4 Gestão de Motoristas
 
@@ -82,7 +81,7 @@ Os requisitos funcionais descrevem as operações que o sistema deve executar. E
 | RF22 | O sistema deve permitir editar os dados de um ônibus. |
 | RF23 | O sistema deve permitir remover um ônibus. |
 | RF24 | O sistema deve listar todos os ônibus cadastrados. |
-| RF25 | O sistema deve permitir buscar um ônibus por placa, por linha ou por motorista. |
+| RF25 | O sistema deve permitir buscar um ônibus por placa ou por motorista. |
 
 ### 3.6 Cálculo de Tarifa
 
@@ -113,11 +112,6 @@ As regras de negócio definem as restrições que governam as operações do sis
 | --- | --- |
 | RN01 | Uma parada pertence a apenas uma linha. |
 | RN02 | Um ônibus opera em apenas uma linha. |
-| RN03 | Um motorista é alocado a apenas um ônibus. |
-| RN04 | Um motorista só pode ser alocado a um ônibus de uma linha operada pela mesma empresa do motorista. |
-| RN05 | Não é permitido cadastrar um horário em uma linha inexistente. |
-| RN06 | Não é permitido cadastrar uma parada em uma linha inexistente. |
-| RN07 | Não é permitido alocar um motorista já alocado a outro ônibus. |
 
 ---
 
