@@ -1,11 +1,11 @@
 #ifndef PARADA_H
 #define PARADA_H
 
-typedef struct {
+typedef struct Parada {
     unsigned int id;
     char nome[50];
     float distancia_km;
-    Parada *proxima;
+    struct Parada *proxima;
 } Parada;
 
 #endif
