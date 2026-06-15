@@ -6,4 +6,10 @@ typedef struct {
     char nome[50];
 } Empresa;
 
+Empresa* ListarEmpresas(void);
+Empresa BuscarEmpresaPorNome(const char *nome);
+Empresa AdicionarEmpresa(const char *nome);
+Empresa EditarEmpresa(unsigned int id, const char *novo_nome);
+short RemoverEmpresa(unsigned int id);
+
 #endif
